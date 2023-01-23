@@ -1,4 +1,4 @@
-import '../Index.css';
+import '../index.css';
 import React, { useEffect, Component } from 'react';
 
 import Mapping from '../Components/Mapping';
