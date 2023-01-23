@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Hero{
+  background-image: url('./assets/hero/hero.svg');
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+.paginate li.active {
+  color: #ffffff;
+  font-weight: 500;
+  border-color: white;
+  background-color: #F4511E;
+}
+.paginate button:disabled{
+  color: #ffffff;
+  background:gray;
+}
