@@ -18,9 +18,10 @@ const Contact = () => {
       const [dragActive, setDragActive] = React.useState(false);
       // ref
       const inputRef = React.useRef(null);
+    const [uploadedFiles, setUploadedFiles] = useState(null);
 
       // handle drag events
-      const handleDrag = function(e) {
+      const handleDrag = (e) => {
          e.preventDefault();
          e.stopPropagation();
          if (e.type === "dragenter" || e.type === "dragover") {
@@ -31,41 +32,48 @@ const Contact = () => {
       };
 
       // triggers when file is dropped
-      const handleDrop = function(e) {
+      const handleDrop = (e) => {
          e.preventDefault();
          e.stopPropagation();
          setDragActive(false);
          if (e.dataTransfer.files && e.dataTransfer.files[0]) {
             handleFiles(e.dataTransfer.files);
+
          }
       };
 
       // triggers when file is selected with click
-      const handleChange = function(e) {
+      const handleChange = (e) => {
          e.preventDefault();
          if (e.target.files && e.target.files[0]) {
-            handleFiles(e.target.files);
+           handleFiles(e.target.files);
          }
       };
 
       {/*triggers the input when the button is clicked*/}
       const onButtonClick = () => {
          inputRef.current.click();
-
       };
 
       {/*form submission*/}
       const [name, setName] = useState("");
       const handleSubmit = (event) => {
         event.preventDefault();
+        if (!name || !address || !unit || !city || !state || !roomType || !roomSize) {
+          alert("All fields are required");
+          return;
+        }else
         alert(`Hello, ${name} . Your form has been submitted, you will hear from us shortly.`)
       }
 
-
+     {/*function to handle files*/}
+     const handleFiles = (files) => {
+       setUploadedFiles(files[0]);
+   }
 
   return (
     <section className="Contact">
-    {/*ProperTY Form*/}
+    {/*Property Form*/}
     <div
       data-aos="zoom-in-left"
       data-aos-easing="ease-in-cubic"
@@ -160,7 +168,10 @@ const Contact = () => {
                       </label>
                     { dragActive && <div id="drag-file-element" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
                     <p className="text-xs text-center font-normal text-gray-500 mb-6">Supported: JPG, JPEG, PNG</p>
+                    {/*Show selected file*/}
+                    { uploadedFiles && <p className="text-xs text-center font-bold text-gray-600 mb-2">{uploadedFiles.name}</p> }
                 </div>
+
                 <div className="text-center mt-4">
                 <button type="submit" className=" border-2 px-12 md:px-20 py-4 rounded-lg mt-4 hover:bg-[#F97316] text-[10px] sm:text-sm md:text-sm bg-[#F4511E] text-[#FFFFFF]">
                     Add New Property
@@ -168,6 +179,7 @@ const Contact = () => {
             </div>
               </div>
             </form>
+
 
         </div>
 

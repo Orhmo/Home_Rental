@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import "swiper/css/autoplay";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // importing aos
@@ -19,6 +21,7 @@ const Review = () => {
     AOS.refresh();
   }, []);
 
+{/*Testimonials list*/}
   const reviews= [
     {
       id:1,
@@ -53,11 +56,19 @@ const Review = () => {
             className="review">
           <div style={{ display: 'block', width: 700, padding: 30 }}>
         <Swiper
-            pagination={{
-              dynamicBullets: true,
-              bulletClass: `swiper-pagination-bullet`,
+           modules={[ Autoplay, Pagination ]}
+           spaceBetween={50}
+           slidesPerView={1}
+           centeredSlides={true}
+           autoplay={{
+             delay: 2000,
+             disableOnInteraction: false
             }}
-            modules={[Pagination]}
+           pagination={{
+             clickable: true,
+             dynamicBullets: true,
+             bulletClass: `swiper-pagination-bullet`,
+           }}
           >
             {reviews.map (({id, review, name, role}) => (
             <SwiperSlide>

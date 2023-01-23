@@ -1,6 +1,6 @@
 
 import '../index.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -12,13 +12,14 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [active, setActive] = useState(0);
 
-  const setClick = (num) => {
-   if (active === num) {
-     setActive(0);
-   } else {
-     setActive(num);
-   }
- };
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    links.forEach(link => {
+      if (link.to === pathname) {
+        setActive(link.id);
+      }
+    });
+  }, []);
 
   const links = [
     {
@@ -60,17 +61,18 @@ const NavBar = () => {
          {links.map(({ id, to, link }) => (
            <li
              key={id}
-
+             onClick={() => setClick(id)}
            >
-             <Link
+             <NavLink
                onClick={() => setNav(!nav)}
                to={to}
                smooth
                duration={500}
-               className="px-2"
+               className={`px-2 hover:border-b-2 hover:border-white ${active === id ? 'active' : ''}`}
+               activeClassName="active"
              >
                {link}
-             </Link>
+             </NavLink>
            </li>
          ))}
        </ul>
@@ -80,12 +82,12 @@ const NavBar = () => {
       {/*Mobile menu button*/}
      <div
        onClick={() => setNav(!nav)}
-       className="cursor-pointer pr-4 z-10 text-white md:hidden lg:hidden"
+       className="flex cursor-pointer pr-4 z-10 text-white md:hidden lg:hidden"
        >
        {nav ? <FaTimes size={20} /> : <FaBars size={20}/>}
    </div>
    {nav && (
-     <ul className="flex flex-col absolute top-2 buttom-0 right-0 w-1/2 md:w-[20vw] h-screen z-1 text-black">
+     <ul className="flex flex-col absolute top-2 buttom-0 right-0 w-1/2 md:w-[20vw] h-screen z-1 text-black md:hidden lg:hidden">
        {links.map(({ id, to, link }) => (
          <li
            key={id}
