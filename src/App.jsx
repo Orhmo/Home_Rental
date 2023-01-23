@@ -5,10 +5,10 @@ import {
   Route
 } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Landlord from './pages/Landloard';
-import Tenants from './pages/Tenants';
-import Contact_us from './pages/Contact';
+import Home from './Pages/Home';
+import Landlord from './Pages/Landloard';
+import Tenants from './Pages/Tenants';
+import Contact_us from './Pages/Contact';
 
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
