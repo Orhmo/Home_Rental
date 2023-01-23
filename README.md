@@ -1,8 +1,18 @@
 # Home Rentals Agency Website
 
-An open-source home rentals agency website. 
+A home rentals agency website challange. 
 The goal of this project is to provide a platform for people to easily search for and book rental properties,
 translating fully the figma design
+
+## Challange
+- Responsiveness
+- Clean codes 
+- Semantics 
+- Code comments
+- Proper documentation
+- Attention to detail
+- Animations
+
 
 The UI and the assets used was gotten from this <a href="https://www.figma.com/file/iCtEmCtz2EECa7GFPwcbuB/Home-Rentals-Agency-website-design-(Community)?node-id=0%3A1&t=viL4KzngKY413uz6-0">figma </a> link.
 
