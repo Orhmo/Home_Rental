@@ -38,8 +38,7 @@ class Mapping extends Component {
 
 
   render() {
-    const MAPBOX_API = import.meta.env.VITE_REACT_APP_MAPBOX_API_KEY;
-
+  
       return (
           <div>
             <div id="map">

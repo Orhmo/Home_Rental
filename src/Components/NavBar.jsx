@@ -23,18 +23,22 @@ const NavBar = () => {
   const links = [
     {
       id: 1,
+      to:"/",
       link: "home",
     },
     {
       id: 2,
+      to:"/landloards",
       link: "landloard",
     },
     {
       id: 3,
+      to:"/tenants",
       link: "tenants",
     },
     {
       id: 4,
+      to:"/contact-us",
       link: "Contact Us",
     },
 
@@ -53,14 +57,14 @@ const NavBar = () => {
      {/*Navbar Items*/}
      <div className="hidden md:flex">
        <ul className="flex items-center space-x-12 text-white capitalize cursor-pointer mr-72">
-         {links.map(({ id, link }) => (
+         {links.map(({ id, to, link }) => (
            <li
              key={id}
 
            >
              <Link
                onClick={() => setNav(!nav)}
-               to={link}
+               to={to}
                smooth
                duration={500}
                className="px-2"
@@ -82,14 +86,14 @@ const NavBar = () => {
    </div>
    {nav && (
      <ul className="flex flex-col absolute top-2 buttom-0 right-0 w-1/2 md:w-[20vw] h-screen z-1 text-black">
-       {links.map(({ id, link }) => (
+       {links.map(({ id, to, link }) => (
          <li
            key={id}
 
          >
            <Link
              onClick={() => setNav(!nav)}
-             to={link}
+             to={to}
              smooth
              duration={500}
              className="no-underline flex flex-row px-4 pr-4 cursor-pointer capitalize py-6 text-md text-white bg-[#F4551E] w-full  hover:text-[#F4551E] hover:bg-white"
