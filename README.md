@@ -16,8 +16,6 @@ translating fully the figma design
 
 The UI and the assets used was gotten from this <a href="https://www.figma.com/file/iCtEmCtz2EECa7GFPwcbuB/Home-Rentals-Agency-website-design-(Community)?node-id=0%3A1&t=viL4KzngKY413uz6-0">figma </a> link.
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. This project is built with React and Tailwind CSS.
 
 ## Technologies used in this project
 - Vite
