@@ -38,14 +38,14 @@ class Mapping extends Component {
 
 
   render() {
-  
+
       return (
           <div>
             <div id="map">
               <div ref={this.mapContainer} style={{ width: '500px', height: '300px' }} />
             </div>
             <div className="px-4 px-6 rounded-lg">
-
+            
             </div>
           </div>
 

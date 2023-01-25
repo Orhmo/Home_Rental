@@ -68,7 +68,7 @@ const NavBar = () => {
                to={to}
                smooth
                duration={500}
-               className={`px-2 hover:border-b-2 hover:border-white ${active === id ? 'active' : ''}`}
+               className={`px-2 hover:border-b-2 hover:border-white hover:pb-[24px] ${active === id ? 'active' : ''}`}
                activeClassName="active"
              >
                {link}

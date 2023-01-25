@@ -45,7 +45,7 @@ const Hero = () => {
                     <select
                       name="input4"
                       id=""
-                      className=" bg-[#F9F9F9] border-2  border-[#E6E6E6] rounded-tl-[5px] rounded-bl-[5px] px-3  md:px-5 py-[11px]  font-medium text-[#252B42]"
+                      className=" bg-[#F9F9F9] border-2  border-[#E6E6E6] rounded-tl-[5px] rounded-bl-[5px] px-4  md:px-5 py-[11px]  font-medium text-[#252B42]"
                     >
                       <option value="">All Type</option>
                     </select>

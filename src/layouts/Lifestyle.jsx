@@ -29,7 +29,7 @@ const Lifestyle = () => {
       <div data-aos="fade-left" data-aos-duration="2000"className="w-full md:w-[540px] md:h-1/2">
            <Masonry
               columnsCount={2}
-              gutter="8px md:2px"
+              gutter="12px "
               >
              <div className="relative md:top-6 ">
                 <img src={One} alt="" className="hover:scale-90"/>
@@ -41,7 +41,7 @@ const Lifestyle = () => {
               </div>
             </Masonry>
             <div
-              className="flex gap-4 mt-2 md:mt-4"
+              className="flex gap-4 md:gap-6 mt-2 md:mt-4"
                >
               <div className="relative">
                 <img src={Three} alt="" className="w-[60vw] hover:scale-90"/>

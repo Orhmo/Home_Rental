@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
+import "../index.css"
 
 import Paginate from '../Components/Paginate';
 import { propertiesList } from '../Components/propertiesList';
@@ -33,6 +34,16 @@ const Properties = () => {
 
   const totalPages = Math.ceil(propertiesList.length / propertyPerPage);
 
+  {/*Pagination Animation on button click*/}
+  const [isAnimating, setIsAnimating] = useState(true);
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
+  };
+
+  useEffect(() => {
+    setIsAnimating(true);
+  }, [currentPage]);
+
 
   return (
     <section className="Properties">
@@ -55,7 +66,7 @@ const Properties = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 items-center my-10">
           {
             currentProperties.map((property) => (
-              <div className="mx-auto justify-center" key={property.id}>
+              <div className={`mx-auto justify-center ${isAnimating ? 'slide-in' : ''}`} onAnimationEnd={handleAnimationEnd} key={property.id}>
               {/*Property Image*/}
                 <div className="w-full md:w-[25vw] cursor-pointer box duration-200 hover:scale-90 rounded-tl-3xl rounded-tr-3xl justify-center">
                   <img src={property.src} alt="" className="rounded-tl-3xl rounded-tr-3xl h-[282px] "/>

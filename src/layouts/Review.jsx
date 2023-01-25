@@ -74,7 +74,7 @@ const Review = () => {
             <SwiperSlide>
               <div key={id} className="md:text-left text-[14px] md:text-[16px] lg:text-[18px] w-[90vw] md:w-[46vw]">
                 <div>
-                  <p className="relative top-0 pr-16 md:pr-0 leading-10 ">
+                  <p className="relative top-0 pr-20 md:pr-0 leading-10 ">
                     {review}
                   </p>
                 </div>

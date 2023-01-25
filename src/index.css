@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* ==================HERO BACKGROUND================== */
 .Hero{
   background-image: url('./assets/hero/hero.svg');
   background-position: center;
@@ -9,6 +11,14 @@
   width: 100vw;
   height: 100vh;
 }
+
+/* ==================NAVBAR================== */
+.active {
+   padding-bottom: 24px;
+   border-bottom: 2px solid #ffffff;
+}
+
+/* ==================PAGINATION================== */
 .paginate li.active {
   color: #ffffff;
   font-weight: 500;
@@ -19,6 +29,19 @@
   color: #ffffff;
   background:gray;
 }
-.active {
-   border-bottom: 2px solid #ffffff;
+
+/* ==================PAGINATION ANIMATION================== */
+.slide-in {
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-name: slide;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
